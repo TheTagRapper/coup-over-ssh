@@ -1,0 +1,12 @@
+graph TD;
+A[Pick Turn] --> B{Sufficient Cost};
+B --T--> C{Can it be challenged};
+B --F--> A;
+C --T--> D[Allow Players to Challenge];
+C --F--> E{Can it be blocked};
+E --F--> F[Allow Turn To Pass Through];
+D ----> G{Does the challenged player have the card?};
+G --F--> H[Challenged Player loses a card];
+G --T--> I[Challenging Player loses a card];
+I ----> F;
+E --T--> D;
